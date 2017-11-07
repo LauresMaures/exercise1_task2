@@ -249,22 +249,22 @@ public class StudiManager implements StudiManagerRequirements {
         String input;
         do{
             try{
-                input = this.scanner.nextLine();
+                input = this.scanner.next();
                 if(this.isCourseNameValid(input)){
                     Subject tempSubject = null;
-                    if(input.equals(CourseName.Algorithmen_und_Datenstrukturen)){
+                    if(input.equals(CourseName.Algorithmen_und_Datenstrukturen.name())){
                         tempSubject = new Subject(2, CourseName.Algorithmen_und_Datenstrukturen, CourseOfStudies.Angewandte_Informatik);
                     }
-                    else if(input.equals(CourseName.Datenbanken)){
+                    else if(input.equals(CourseName.Datenbanken.name())){
                         tempSubject = new Subject(3, CourseName.Datenbanken, CourseOfStudies.Angewandte_Informatik);
                     }
-                    else if(input.equals(CourseName.Gesellschaftliche_Aspekte_der_Informatik)){
+                    else if(input.equals(CourseName.Gesellschaftliche_Aspekte_der_Informatik.name())){
                         tempSubject = new Subject(1, CourseName.Gesellschaftliche_Aspekte_der_Informatik, CourseOfStudies.Angewandte_Informatik);
                     }
-                    else if(input.equals(CourseName.Mathe3)){
+                    else if(input.equals(CourseName.Mathe3.name())){
                         tempSubject = new Subject(3, CourseName.Mathe3, CourseOfStudies.Umweltinformatik);
                     }
-                    else if(input.equals(CourseName.Programmierung3)){
+                    else if(input.equals(CourseName.Programmierung3.name())){
                         tempSubject =  new Subject(3, CourseName.Programmierung3, CourseOfStudies.Angewandte_Informatik);
                     }
                     if(student.subjectAlreadyChosen(CourseName.valueOf(input))){

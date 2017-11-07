@@ -76,19 +76,19 @@ public class StudiManager implements StudiManagerRequirements {
         //Sort students according to chosen subjects to the ArrayLists:
         for(Student student : listOfStudents){
             for(int i = 0; i < student.chosenSubjects.length; i++){
-                if(student.chosenSubjects[i].getCoursename() == CourseName.Programmierung3){
+                if(student.chosenSubjects[i] != null && student.chosenSubjects[i].getCoursename().equals(CourseName.Programmierung3)){
                     studentsProg3.add(student);
                 }
-                if(student.chosenSubjects[i].getCoursename() == CourseName.Datenbanken){
+                if(student.chosenSubjects[i] != null && student.chosenSubjects[i].getCoursename().equals(CourseName.Datenbanken)){
                     studentsDB.add(student);
                 }
-                if(student.chosenSubjects[i].getCoursename() == CourseName.Algorithmen_und_Datenstrukturen){
+                if(student.chosenSubjects[i] != null && student.chosenSubjects[i].getCoursename().equals(CourseName.Algorithmen_und_Datenstrukturen)){
                     studentsAlgData.add(student);
                 }
-                if(student.chosenSubjects[i].getCoursename() == CourseName.Mathe3){
+                if(student.chosenSubjects[i] != null && student.chosenSubjects[i].getCoursename().equals(CourseName.Mathe3)){
                     studentsMath3.add(student);
                 }
-                if(student.chosenSubjects[i].getCoursename() == CourseName.Gesellschaftliche_Aspekte_der_Informatik){
+                if(student.chosenSubjects[i] != null && student.chosenSubjects[i].getCoursename().equals(CourseName.Gesellschaftliche_Aspekte_der_Informatik)){
                     studentsGesellAspekte.add(student);
                 }
             }             
@@ -252,7 +252,7 @@ public class StudiManager implements StudiManagerRequirements {
                 input = this.scanner.next();
                 if(this.isCourseNameValid(input)){
                     Subject tempSubject = null;
-                    if(input.equals(CourseName.Algorithmen_und_Datenstrukturen.name())){
+                    if(CourseName.Algorithmen_und_Datenstrukturen.name().equals(input)){
                         tempSubject = new Subject(2, CourseName.Algorithmen_und_Datenstrukturen, CourseOfStudies.Angewandte_Informatik);
                     }
                     else if(input.equals(CourseName.Datenbanken.name())){
